@@ -12,16 +12,27 @@
     let paletteDevices = [
         {
             id: "p-sw-1", // Using more descriptive IDs
-            name: "1U Switch",
-            ports: Array.from({ length: 8 }, (_, i) => ({
+            name: "1U 24P",
+            ports: Array.from({ length: 24 }, (_, i) => ({
+                portRow: i < 12 ? 0 : 1,
                 id: `p${i + 1}`,
                 type: "ethernet",
             })),
         },
         {
             id: "p-sw-2",
-            name: "1U Switch",
-            ports: Array.from({ length: 8 }, (_, i) => ({
+            name: "1U 24P",
+            ports: Array.from({ length: 24 }, (_, i) => ({
+                portRow: i < 12 ? 0 : 1,
+                id: `p${i + 1}`,
+                type: "ethernet",
+            })),
+        },
+        {
+            id: "p-sw-3",
+            name: "1U 24P",
+            ports: Array.from({ length: 24 }, (_, i) => ({
+                portRow: i < 12 ? 0 : 1,
                 id: `p${i + 1}`,
                 type: "ethernet",
             })),

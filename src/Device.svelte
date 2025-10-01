@@ -48,7 +48,7 @@
         height: 100%;
         padding: 0 0.5rem;
         border: 1px solid #181a1f;
-        background-color: #21252b;
+        background-color: #34495e;
         border-radius: 4px;
         display: flex;
         align-items: center;
@@ -61,7 +61,7 @@
     }
 
     .device:hover {
-        background-color: #2c323c;
+        background-color: #4a627d;
         transform: translateY(-1px);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
