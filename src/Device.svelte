@@ -3,6 +3,14 @@
     const dispatch = createEventDispatcher();
     export let device;
 
+    // Filter ports into two rows based on the 'portRow' property (0 for top, 1 for bottom)
+    $: topRowPorts = device.ports
+        ? device.ports.filter((p) => p.portRow === 0)
+        : [];
+    $: bottomRowPorts = device.ports
+        ? device.ports.filter((p) => p.portRow === 1)
+        : [];
+
     function handleDragStart(event) {
         event.dataTransfer.setData("device", JSON.stringify(device));
     }
@@ -80,8 +88,14 @@
 
     .ports-container {
         display: flex;
-        gap: 3px;
+        flex-direction: column; /* Stack rows vertically */
+        gap: 2px; /* Gap between the two rows */
         flex-shrink: 0;
+    }
+
+    .port-row {
+        display: flex;
+        gap: 3px; /* Gap between individual ports in a row */
     }
 
     .port {
