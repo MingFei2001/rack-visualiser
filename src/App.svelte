@@ -446,7 +446,11 @@
         </div>
     </header>
     <div class="container">
-        <div on:dragover|preventDefault on:drop={handleDeviceRemove}>
+        <div
+            class="device-palette-wrapper"
+            on:dragover|preventDefault
+            on:drop={handleDeviceRemove}
+        >
             <DevicePalette
                 devices={paletteDevices}
                 on:portmousedown={handlePortMouseDown}
@@ -743,5 +747,14 @@
         background-color: #4b5263;
         cursor: not-allowed;
         opacity: 0.5;
+    }
+
+    .device-palette-wrapper {
+        width: 220px; /* Adjust as needed */
+        flex-shrink: 0;
+        padding: 1rem; /* Consistent padding */
+        background-color: #21252b; /* Match existing dark theme */
+        border-right: 1px solid #181a1f;
+        overflow-y: auto; /* Allow scrolling if palette content overflows */
     }
 </style>

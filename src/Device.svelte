@@ -26,27 +26,52 @@
     <span class="device-name">{device.name}</span>
     {#if device.ports && device.ports.length > 0}
         <div class="ports-container">
-            {#each device.ports as port (port.id)}
-                <div
-                    class="port"
-                    data-device-id={device.id}
-                    data-port-id={port.id}
-                    title={port.id}
-                    on:mousedown={(e) => {
-                        const rect = e.target.getBoundingClientRect();
-                        const x = rect.left + rect.width / 2;
-                        const y = rect.top + rect.height / 2;
-                        dispatch("portmousedown", {
-                            deviceId: device.id,
-                            portId: port.id,
-                            x,
-                            y,
-                        });
-                    }}
-                >
-                    <!-- Port visual indicator -->
-                </div>
-            {/each}
+            <div class="port-row top-row">
+                {#each topRowPorts as port (port.id)}
+                    <div
+                        class="port"
+                        data-device-id={device.id}
+                        data-port-id={port.id}
+                        title={port.id}
+                        on:mousedown={(e) => {
+                            const rect = e.target.getBoundingClientRect();
+                            const x = rect.left + rect.width / 2;
+                            const y = rect.top + rect.height / 2;
+                            dispatch("portmousedown", {
+                                deviceId: device.id,
+                                portId: port.id,
+                                x,
+                                y,
+                            });
+                        }}
+                    >
+                        <!-- Port visual indicator -->
+                    </div>
+                {/each}
+            </div>
+            <div class="port-row bottom-row">
+                {#each bottomRowPorts as port (port.id)}
+                    <div
+                        class="port"
+                        data-device-id={device.id}
+                        data-port-id={port.id}
+                        title={port.id}
+                        on:mousedown={(e) => {
+                            const rect = e.target.getBoundingClientRect();
+                            const x = rect.left + rect.width / 2;
+                            const y = rect.top + rect.height / 2;
+                            dispatch("portmousedown", {
+                                deviceId: device.id,
+                                portId: port.id,
+                                x,
+                                y,
+                            });
+                        }}
+                    >
+                        <!-- Port visual indicator -->
+                    </div>
+                {/each}
+            </div>
         </div>
     {/if}
 </div>
