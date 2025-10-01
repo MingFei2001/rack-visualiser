@@ -9,8 +9,6 @@ The Rack Visualizer is a modern web-based application meticulously crafted for *
 
 Our initial focus is on supporting deployments within a **2-row horizontal storage shelf system**, a common configuration found in various professional environments, including those at WWT.
 
----
-
 ## ✨ Key Features
 
 The application currently empowers you with a robust set of functionalities:
@@ -31,8 +29,6 @@ The application currently empowers you with a robust set of functionalities:
     *   Plan intricate network connectivity by drawing virtual cables between the ports of different devices directly on your rack layout.
     *   This feature aids in visualizing cable routing, managing port utilization, and preventing connectivity errors during physical deployment.
 
----
-
 ## 🚀 How to Use
 
 Get started with your rack planning in just a few steps:
@@ -47,8 +43,6 @@ Get started with your rack planning in just a few steps:
     *   Then, click on a port on the second device. A virtual cable will be drawn between the two selected ports, visualizing your connection.
     *   *(Note: Cable removal functionality is planned for a future update.)*
 
----
-
 ## 🛠️ Technology Stack
 
 Built with cutting-edge web technologies to ensure a smooth, reactive, and efficient user experience:
@@ -62,8 +56,6 @@ Built with cutting-edge web technologies to ensure a smooth, reactive, and effic
 *   **Graphics Rendering**: **SVG (Scalable Vector Graphics)**
     *   Used for rendering all rack elements, network devices, and cable connections, ensuring crisp, interactive, and responsive visuals across all display sizes and resolutions.
 
----
-
 ## 🏗️ High-Level Component Architecture
 
 The application is structured around a clear, modular, and maintainable component-based architecture:
@@ -73,8 +65,6 @@ The application is structured around a clear, modular, and maintainable componen
 *   `DevicePalette.svelte`: A dedicated sidebar component that displays and manages the collection of draggable network devices available for placement.
 *   `Device.svelte`: Represents an individual network device, encapsulating its visual representation, drag behavior, and port information.
 *   `Cable.svelte`: Renders the visual representation of a virtual cable connection between two device ports, handling its path, styling, and basic interactions.
-
----
 
 ## 🏁 Getting Started (Development)
 
@@ -95,8 +85,6 @@ To set up and run the project locally for development, follow these simple steps
     ```
     The application will typically be accessible in your browser at `http://localhost:5173/` (or another port if 5173 is already in use).
 
----
-
 ## 🔮 Future Enhancements (Roadmap)
 
 We are continuously working to improve and expand the capabilities of the Rack Visualizer. Here are some key features planned for future releases:
@@ -112,8 +100,6 @@ We are continuously working to improve and expand the capabilities of the Rack V
 *   [ ] **Enhanced Visual Feedback**: Improve visual cues for drag-and-drop operations (e.g., ghosting, drop indicators), active ports, and cable drawing states.
 *   [ ] **Editable Device Properties**: Allow users to edit device attributes (e.g., name, port labels, IP addresses, serial numbers) directly on the rack for more detailed planning.
 
----
-
 ## 🤝 Contributing
 
 We welcome and appreciate contributions to the Rack Visualizer project! If you're interested in improving this tool or adding new features, please feel free to:
@@ -122,12 +108,6 @@ We welcome and appreciate contributions to the Rack Visualizer project! If you'r
 *   Create a new branch for your features or bug fixes.
 *   Submit a pull request with your changes.
 
----
-
 ## 📄 License
 
-This project is licensed under the **MIT License**. See the `LICENSE` file for more details.
-
----
-
-**[Explore the Rack Visualizer on GitHub](https://github.com/MingFei2001/rack_visualizer)**
+This project is licensed under the **MIT License**. See the [LICENSE](./LICENSE) file for more details.
