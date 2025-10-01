@@ -1,4 +1,5 @@
-# Rack Visualizer: Intuitive Network Rack Layout Planning
+<h1 align="center">Rack Visualizer</h1>
+<p align="center"><i>Intuitive Network Rack Layout Planning</i></p>
 
 > **Plan your network rack deployments with ease and precision before ever touching a physical device.**
 
