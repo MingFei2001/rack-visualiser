@@ -750,7 +750,7 @@
     }
 
     .device-palette-wrapper {
-        width: 220px; /* Adjust as needed */
+        width: 255px; /* Adjust as needed */
         flex-shrink: 0;
         padding: 1rem; /* Consistent padding */
         background-color: #21252b; /* Match existing dark theme */
