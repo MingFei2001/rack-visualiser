@@ -10,26 +10,29 @@
 
     // 1. Devices available in the palette
     let paletteDevices = [
+        // 8-Port Switch (Single Row)
         {
-            id: "p-sw-1", // Using more descriptive IDs
-            name: "1U 24P",
-            ports: Array.from({ length: 24 }, (_, i) => ({
-                portRow: i < 12 ? 0 : 1,
+            id: "p-sw-8",
+            name: "1U Switch (8-Port)",
+            ports: Array.from({ length: 8 }, (_, i) => ({
+                portRow: 0, // All ports are in the top row
                 id: `p${i + 1}`,
                 type: "ethernet",
             })),
         },
+        // 12-Port Switch (Single Row)
         {
-            id: "p-sw-2",
-            name: "1U 24P",
-            ports: Array.from({ length: 24 }, (_, i) => ({
-                portRow: i < 12 ? 0 : 1,
+            id: "p-sw-12",
+            name: "1U Switch (12-Port)",
+            ports: Array.from({ length: 12 }, (_, i) => ({
+                portRow: 0, // All ports are in the top row
                 id: `p${i + 1}`,
                 type: "ethernet",
             })),
         },
+        // 24-Port Switch (Two Rows)
         {
-            id: "p-sw-3",
+            id: "p-sw-24",
             name: "1U 24P",
             ports: Array.from({ length: 24 }, (_, i) => ({
                 portRow: i < 12 ? 0 : 1,
