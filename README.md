@@ -87,7 +87,7 @@ We are continuously working to improve and expand the capabilities of the Rack V
 
 *   [ ] **Support for Diverse Rack Types**: Expand functionality to include various rack sizes, orientations (e.g., vertical racks), and fully customizable configurations.
 *   [ ] **Persistence (Save/Load Configurations)**: Implement the ability to save current rack layouts and load previously designed configurations from local files or browser storage.
-*   [ ] **Expanded Device Library**: Introduce a broader range of network device types, including routers, patch panels, servers, different U sizes, and custom device definitions.
+*   [x] **Expanded Device Library**: Introduce a broader range of network device types, including routers, patch panels, servers, different U sizes, and custom device definitions.
 *   [ ] **Export Functionality**: Enable users to export their finalized rack layouts as high-quality images (PNG/JPG) or professional PDF documents for documentation and sharing.
 *   [ ] **Basic Inventory Management**: Integrate a simple system for managing device inventory, allowing users to track available equipment and its status.
 *   [ ] **Cable Removal Functionality**: Provide an intuitive method for users to selectively remove individual cables from the rack.
