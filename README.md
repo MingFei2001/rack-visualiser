@@ -1,13 +1,13 @@
 <h1 align="center">Rack Visualizer</h1>
 <p align="center"><i>Intuitive Network Rack Layout Planning</i></p>
 
-> **Plan your network rack deployments with ease and precision before ever touching a physical device.**
+> **Plan your network rack deployments with ease and precision before ever touching the physical device.**
 
 ![Rack Visualizer Demo](./media/rack_visualizer_demo.png)
 
 The Rack Visualizer is a modern web-based application meticulously crafted for **system integrators** and **network engineers**. It offers an intuitive, interactive platform to design, visualize, and plan complex network rack layouts, optimizing **equipment placement**, ensuring **efficient space utilization**, and streamlining the entire **installation process** for both temporary and permanent setups.
 
-Our initial focus is on supporting deployments within a **2-row horizontal storage shelf system**, a common configuration found in various professional environments, including those at WWT.
+Our initial focus is on supporting deployments within a **2-row horizontal storage shelf system**, a common configuration found in various professional environments, including my workplace, WWT.
 
 ## ✨ Key Features
 
@@ -19,7 +19,7 @@ The application currently empowers you with a robust set of functionalities:
 
 *   **Dynamic Device Palette** 📦
     *   Access a readily available palette of common network devices.
-    *   Currently includes **1U switches with 24 ports**, intelligently arranged in two rows of 12 for clear visibility. This palette is easily expandable for future device types.
+    *   Currently includes several variants of 1U switches, such as 8-port, 12-port, 16-port, 24-port, and 48-port models.
 
 *   **Intuitive Drag-and-Drop Functionality** 🖱️
     *   Seamlessly drag devices from the palette and precisely position them into any valid slot on the rack.

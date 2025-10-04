@@ -42,13 +42,48 @@
         };
     }
 
+    function createRouter(portCount) {
+        const name = `1U ${portCount}-Port Router`;
+        const rackName = `1U ${portCount}P`;
+        let getPortRow;
+
+        if (portCount === 24) {
+            // Two rows of 12
+            getPortRow = (i) => (i < 12 ? 0 : 1);
+        } else if (portCount === 16) {
+            // Two rows of 8
+            getPortRow = (i) => (i < 8 ? 0 : 1);
+        } else if (portCount === 12) {
+            // Two rows of 6
+            getPortRow = (i) => (i < 6 ? 0 : 1);
+        } else {
+            // Single row for 8-port
+            getPortRow = () => 0;
+        }
+
+        return {
+            id: `p-rtr-${portCount}`,
+            name: name,
+            rackName: rackName,
+            type: "router",
+            ports: Array.from({ length: portCount }, (_, i) => ({
+                portRow: getPortRow(i),
+                id: `p${i + 1}`,
+                type: "ethernet",
+            })),
+        };
+    }
+
     // 1. Devices available in the palette
     let paletteDevices = [
         createSwitch(8),
-        createSwitch(12),
         createSwitch(16),
         createSwitch(24),
         createSwitch(48),
+        createRouter(8),
+        createRouter(12),
+        createRouter(16),
+        createRouter(24),
     ];
 
     // 2. Devices placed in the rack
@@ -686,10 +721,10 @@
     .stats-panel {
         background-color: #21252b;
         color: #abb2bf;
-        padding: 1rem 1.5rem;
+        padding: 0.75rem 1.125rem;
         display: flex;
         justify-content: space-around;
-        gap: 2rem;
+        gap: 1.5rem;
         flex-shrink: 0;
         border-top: 1px solid #181a1f;
     }
@@ -699,19 +734,19 @@
     }
 
     .stats-section h3 {
-        margin: 0 0 0.75rem 0;
-        font-size: 0.75rem;
+        margin: 0 0 0.5rem 0;
+        font-size: 0.6rem;
         font-weight: 600;
         color: #e5c07b;
         text-transform: uppercase;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.075em;
     }
 
     .stat-item {
         display: flex;
         justify-content: space-between;
-        padding: 0.25rem 0;
-        font-size: 0.85em;
+        padding: 0.2rem 0;
+        font-size: 0.75em;
         border-bottom: 1px solid #3e4451;
     }
 
@@ -734,19 +769,19 @@
 
     .stat-actions {
         display: flex;
-        gap: 0.5rem;
-        margin-top: 0.5rem;
+        gap: 0.375rem;
+        margin-top: 0.375rem;
     }
 
     .stat-actions button {
         flex: 1;
-        padding: 0.5rem 0.75rem;
+        padding: 0.375rem 0.5rem;
         background-color: #98c379;
         color: #282c34;
         border: none;
         border-radius: 4px;
         cursor: pointer;
-        font-size: 0.813rem;
+        font-size: 0.7rem;
         font-weight: 500;
         transition: background-color 0.2s;
     }

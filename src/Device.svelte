@@ -34,6 +34,7 @@
 <div
     class="device"
     class:on-rack={isOnRack}
+    class:router={device.type === "router"}
     draggable="true"
     on:dragstart={handleDragStart}
     role="button"
@@ -91,6 +92,15 @@
         background-color: #4a627d;
         transform: translateY(-1px);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* A more subtle purple for Routers */
+    .device.router {
+        background-color: #685375;
+    }
+
+    .device.router:hover {
+        background-color: #7a6389; /* A slightly lighter purple for hover */
     }
 
     .device-name {
