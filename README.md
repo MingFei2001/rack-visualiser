@@ -3,7 +3,7 @@
 
 > **Plan your network rack deployments with ease and precision before ever touching the physical device.**
 
-![Rack Visualizer Demo](./media/rack_visualizer_demo.png)
+![Rack Visualizer Demo](./media/rack_visualizer_demo_v3.png)
 
 The Rack Visualizer is a modern web-based application meticulously crafted for **system integrators** and **network engineers**. It offers an intuitive, interactive platform to design, visualize, and plan complex network rack layouts, optimizing **equipment placement**, ensuring **efficient space utilization**, and streamlining the entire **installation process** for both temporary and permanent setups.
 
