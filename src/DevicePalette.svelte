@@ -34,7 +34,7 @@
 
 <style>
     .palette {
-        width: 220px;
+        width: 280px;
         border: 1px solid #181a1f;
         border-radius: 8px;
         padding: 1rem;
@@ -67,5 +67,6 @@
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
+        align-items: center; /* Center devices horizontally */
     }
 </style>

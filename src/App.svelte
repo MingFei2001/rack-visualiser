@@ -9,37 +9,45 @@
     // Centralized state for the entire application.
 
     // 1. Devices available in the palette
+    // A helper function to create switch configurations to keep the code DRY.
+    function createSwitch(portCount) {
+        const name = `1U ${portCount}-Port Switch`;
+        const rackName = `1U ${portCount}P`;
+        let getPortRow;
+
+        if (portCount === 48) {
+            // Special case for 48-port switch: 4 rows of 12
+            getPortRow = (i) => Math.floor(i / 12);
+        } else if (portCount === 12) {
+            // Special case for 12-port switch: 2 rows of 6
+            getPortRow = (i) => (i < 6 ? 0 : 1);
+        } else if (portCount === 8) {
+            // Single row for 8-port switch
+            getPortRow = () => 0;
+        } else {
+            // Two rows for other switches (24)
+            getPortRow = (i) => (i < portCount / 2 ? 0 : 1);
+        }
+
+        return {
+            id: `p-sw-${portCount}`,
+            name: name,
+            rackName: rackName, // New property for rack display
+            type: "switch",
+            ports: Array.from({ length: portCount }, (_, i) => ({
+                portRow: getPortRow(i),
+                id: `p${i + 1}`,
+                type: "ethernet",
+            })),
+        };
+    }
+
+    // 1. Devices available in the palette
     let paletteDevices = [
-        // 8-Port Switch (Single Row)
-        {
-            id: "p-sw-8",
-            name: "1U Switch (8-Port)",
-            ports: Array.from({ length: 8 }, (_, i) => ({
-                portRow: 0, // All ports are in the top row
-                id: `p${i + 1}`,
-                type: "ethernet",
-            })),
-        },
-        // 12-Port Switch (Single Row)
-        {
-            id: "p-sw-12",
-            name: "1U Switch (12-Port)",
-            ports: Array.from({ length: 12 }, (_, i) => ({
-                portRow: 0, // All ports are in the top row
-                id: `p${i + 1}`,
-                type: "ethernet",
-            })),
-        },
-        // 24-Port Switch (Two Rows)
-        {
-            id: "p-sw-24",
-            name: "1U 24P",
-            ports: Array.from({ length: 24 }, (_, i) => ({
-                portRow: i < 12 ? 0 : 1,
-                id: `p${i + 1}`,
-                type: "ethernet",
-            })),
-        },
+        createSwitch(8),
+        createSwitch(12),
+        createSwitch(24),
+        createSwitch(48),
     ];
 
     // 2. Devices placed in the rack
@@ -753,7 +761,7 @@
     }
 
     .device-palette-wrapper {
-        width: 255px; /* Adjust as needed */
+        width: 320px; /* Adjust as needed */
         flex-shrink: 0;
         padding: 1rem; /* Consistent padding */
         background-color: #21252b; /* Match existing dark theme */

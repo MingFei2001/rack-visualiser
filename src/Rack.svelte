@@ -16,7 +16,7 @@
         event.preventDefault();
         const deviceData = event.dataTransfer.getData("device");
         if (deviceData) {
-            const droppedDevice = JSON.parse(deviceData);
+            const droppedDevice = JSON.parse(deviceData); // Corrected: JSON.parse
             // Emit an event to the parent (`App.svelte`) to handle the state change.
             dispatch("devicedrop", {
                 row,
@@ -63,6 +63,7 @@
                             {#if deviceInUnit}
                                 <Device
                                     device={deviceInUnit}
+                                    isOnRack={true}
                                     on:portmousedown={(e) =>
                                         dispatch("portmousedown", e.detail)}
                                 />
@@ -108,6 +109,7 @@
         flex-direction: column;
         background-color: #282c34;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        min-width: 280px; /* Ensure stack is wide enough for devices + padding */
     }
 
     .stack-label {
@@ -123,7 +125,7 @@
     }
 
     .rack-unit {
-        height: 35px;
+        height: 80px;
         border-top: 1px solid #3e4451;
         display: flex;
         align-items: center;
