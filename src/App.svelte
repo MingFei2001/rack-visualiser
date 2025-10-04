@@ -340,13 +340,7 @@
     function handleGlobalMouseUp(event) {
         debugLog(
             "App:CableDraw",
-            "Mouse Up event detected. drawingCable:",
-            drawingCable,
-            "Event target:",
-            event.target,
-            "Event clientX/Y:",
-            event.clientX,
-            event.clientY,
+            `Mouse Up event. drawingCable: ${drawingCable}, Target: ${event.target}, Client: (${event.clientX}, ${event.clientY}).`,
         );
         if (!drawingCable) {
             debugLog("App:CableDraw", "Not drawing cable, ignoring mouseup.");
@@ -366,8 +360,7 @@
 
         debugLog(
             "App:CableDraw",
-            "Element under mouse with SVG disabled:",
-            elementUnderMouse,
+            `Element under mouse with SVG disabled: ${elementUnderMouse}.`,
         );
 
         const endPortEl = elementUnderMouse
@@ -377,31 +370,27 @@
         // Re-enable pointer events on SVG - but first ensure drawingCable is false
         drawingCable = false;
         if (svgElement) {
-            svgElement.style.pointerEvents = "none";
+            svgElement.style.pointerEvents = "auto";
         }
 
-        debugLog("App:CableDraw", "End port element detected:", endPortEl);
+        debugLog("App:CableDraw", `End port element detected: ${endPortEl}.`);
 
         if (endPortEl) {
             const endDeviceId = endPortEl.dataset.deviceId;
             const endPortId = endPortEl.dataset.portId;
-            debugLog("App:CableDraw", "Cable ended on port:", {
-                endDeviceId,
-                endPortId,
-                startPortInfo,
-            });
+            debugLog(
+                "App:CableDraw",
+                `Cable ended on port: { deviceId: ${endDeviceId}, portId: ${endPortId}, startPortInfo: ${JSON.stringify(startPortInfo)} }.`,
+            );
 
             const isSamePort =
                 startPortInfo.deviceId === endDeviceId &&
                 startPortInfo.portId === endPortId;
 
-            debugLog("App:CableDraw", "Same port check:", {
-                isSamePort,
-                startDevice: startPortInfo.deviceId,
-                endDevice: endDeviceId,
-                startPort: startPortInfo.portId,
-                endPort: endPortId,
-            });
+            debugLog(
+                "App:CableDraw",
+                `Same port check: { isSamePort: ${isSamePort}, startDevice: ${startPortInfo.deviceId}, endDevice: ${endDeviceId}, startPort: ${startPortInfo.portId}, endPort: ${endPortId} }.`,
+            );
 
             // Check if a cable already exists
             const cableExists = cables.some(
@@ -416,10 +405,10 @@
                         c.from.portId === endPortId),
             );
 
-            debugLog("App:CableDraw", "Cable exists check:", {
-                cableExists,
-                existingCables: cables,
-            });
+            debugLog(
+                "App:CableDraw",
+                `Cable exists check: { cableExists: ${cableExists}, existingCables: ${JSON.stringify(cables)} }.`,
+            );
 
             if (!isSamePort && !cableExists) {
                 cables = [
@@ -431,10 +420,7 @@
                 ];
                 debugLog(
                     "App:CableDraw",
-                    "Cable added successfully:",
-                    cables[cables.length - 1],
-                    "Total cables now:",
-                    cables.length,
+                    `Cable added successfully: ${JSON.stringify(cables[cables.length - 1])}. Total cables now: ${cables.length}.`,
                 );
             } else if (isSamePort) {
                 debugLog("App:CableDraw", "Cannot connect port to itself.");
@@ -447,8 +433,7 @@
         } else {
             debugLog(
                 "App:CableDraw",
-                "Cable not ended on a port, cancelling draw. Element under mouse:",
-                document.elementFromPoint(event.clientX, event.clientY),
+                `Cable not ended on a port, cancelling draw. Element under mouse: ${document.elementFromPoint(event.clientX, event.clientY)}.`,
             );
         }
 
@@ -456,8 +441,7 @@
         startPortInfo = null;
         debugLog(
             "App:CableDraw",
-            "Drawing state reset. drawingCable:",
-            drawingCable,
+            `Drawing state reset. drawingCable: ${drawingCable}.`,
         );
     }
 
