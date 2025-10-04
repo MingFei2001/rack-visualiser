@@ -47,24 +47,20 @@ Get started with your rack planning in just a few steps:
 
 Built with cutting-edge web technologies to ensure a smooth, reactive, and efficient user experience:
 
-*   **Frontend Framework**: **[Svelte](https://svelte.dev/)**
-    *   A radical new approach to building user interfaces that compiles your components into highly efficient vanilla JavaScript, resulting in blazing-fast applications.
-*   **Build Tool**: **[Vite](https://vitejs.dev/)**
-    *   A next-generation frontend tooling that provides an extremely fast development server and optimized build process.
-*   **Styling**: **[Bootstrap](https://getbootstrap.com/)**
-    *   Utilized for rapid and consistent UI development, ensuring a clean, responsive, and functional interface.
-*   **Graphics Rendering**: **SVG (Scalable Vector Graphics)**
-    *   Used for rendering all rack elements, network devices, and cable connections, ensuring crisp, interactive, and responsive visuals across all display sizes and resolutions.
+- **Frontend Framework**: [Svelte](https://svelte.dev/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Bootstrap](https://getbootstrap.com/)
+- **Graphics Rendering**: SVG (Scalable Vector Graphics)
 
 ## 🏗️ High-Level Component Architecture
 
 The application is structured around a clear, modular, and maintainable component-based architecture:
 
-*   `App.svelte`: The central application component, serving as the primary entry point and orchestrating the overall layout and state management.
-*   `RackView.svelte`: Manages the rendering of the 2-row rack structure and handles all user interactions within the rack space, including device placement and cable drawing.
-*   `DevicePalette.svelte`: A dedicated sidebar component that displays and manages the collection of draggable network devices available for placement.
-*   `Device.svelte`: Represents an individual network device, encapsulating its visual representation, drag behavior, and port information.
-*   `Cable.svelte`: Renders the visual representation of a virtual cable connection between two device ports, handling its path, styling, and basic interactions.
+- `App.svelte`: The central application component, serving as the primary entry point and orchestrating the overall layout and state management.
+- `RackView.svelte`: Manages the rendering of the 2-row rack structure and handles all user interactions within the rack space, including device placement and cable drawing.
+- `DevicePalette.svelte`: A dedicated sidebar component that displays and manages the collection of draggable network devices available for placement.
+- `Device.svelte`: Represents an individual network device, encapsulating its visual representation, drag behavior, and port information.
+- `Cable.svelte`: Renders the visual representation of a virtual cable connection between two device ports, handling its path, styling, and basic interactions.
 
 ## 🏁 Getting Started (Development)
 
@@ -111,3 +107,9 @@ We welcome and appreciate contributions to the Rack Visualizer project! If you'r
 ## 📄 License
 
 This project is licensed under the **MIT License**. See the [LICENSE](./LICENSE) file for more details.
+
+## Support
+
+For questions, suggestions, or support, please open an issue on [GitHub](https://github.com/MingFei2001/rack_visualizer/issues) or contact the maintainer via the repository.
+
+---
