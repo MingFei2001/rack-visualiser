@@ -4,6 +4,7 @@
     import "./app.css";
     import Rack from "./Rack.svelte";
     import DevicePalette from "./DevicePalette.svelte";
+    import HelpModal from "./HelpModal.svelte";
 
     // --- STATE MANAGEMENT ---
     // Centralized state for the entire application.
@@ -101,6 +102,8 @@
     // --- CABLE RENDERING ---
     let svgElement;
     let renderedCables = []; // The view model for cables: { from: {x, y}, to: {x, y} }
+
+    let showHelpModal = false;
 
     // Helper to get coordinates relative to the SVG container
     function getSvgCoordinates(clientX, clientY) {
@@ -487,9 +490,9 @@
                 <input type="checkbox" bind:checked={$debugMode} />
                 <span>Debug Mode</span>
             </label>
-            <span class="keyboard-hint">
-                Press Delete/Backspace to remove cables
-            </span>
+            <button class="help-button" on:click={() => (showHelpModal = true)}
+                >?</button
+            >
         </div>
     </header>
     <div class="container">
@@ -644,6 +647,8 @@
     </div>
 </main>
 
+<HelpModal show={showHelpModal} on:close={() => (showHelpModal = false)} />
+
 <style>
     :global(body) {
         display: block;
@@ -695,6 +700,26 @@
 
     .debug-control input[type="checkbox"] {
         cursor: pointer;
+    }
+
+    .help-button {
+        background-color: #4b5263;
+        color: #abb2bf;
+        border: 1px solid #3e4451;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        font-size: 0.875rem;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.2s;
+    }
+
+    .help-button:hover {
+        background-color: #5c6370;
     }
 
     .keyboard-hint {
