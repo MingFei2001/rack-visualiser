@@ -46,6 +46,7 @@
     let paletteDevices = [
         createSwitch(8),
         createSwitch(12),
+        createSwitch(16),
         createSwitch(24),
         createSwitch(48),
     ];
